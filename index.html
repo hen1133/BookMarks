@@ -1,0 +1,93 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Link to Font Awesome icons library -->
+    <link rel="stylesheet" href="css/all.min.css" />
+    <!-- Link to Bootstrap CSS for styling -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- Link to custom CSS for additional styling -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <main>
+    
+
+      <section>
+        <div class="container p-5">
+          <h1 class="text-center mt-5 p-3">Bookmarker</h1>
+          <hr />
+          <h2 class="text-center text-success p-3">
+            <i class="fas fa-bookmark"></i> Bookmark your favorite sites
+            <i class="fas fa-bookmark"></i>
+          </h2>
+          <div class="form-floating mb-3">
+            <input
+              oninput="validateInputs(this,'msgName')"
+              type="text"
+              class="form-control"
+              id="siteName"
+              placeholder=""
+              required
+            />
+            <label for="siteName">
+              <i class="fas fa-save"></i> Site Name
+            </label>
+            <p id="msgName" class="alert alert-danger p-1 small w-100 d-none">
+              It must start with a letter, be 3 to 20 characters long, and can
+              only contain letters, numbers, hyphens, or underscores.
+            </p>
+          </div>
+          <div class="form-floating">
+            <input
+              oninput="validateInputs(this,'msgUrl')"
+              type="url"
+              class="form-control"
+              id="siteUrl"
+              placeholder=""
+              required
+            />
+            <label for="siteUrl">
+              <i class="fas fa-link"></i> Site URL
+            </label>
+            <p id="msgUrl" class="alert alert-danger p-1 small w-100 d-none">
+              must start with http or https and ends with .com or .net etc...
+            </p>
+          </div>
+          <div>
+            <button
+              onclick="addBookmark()"
+              type="submit"
+              class="btn btn-warning w-100 mt-3"
+            >
+              Submit
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <table class="table table-striped text-center">
+          <thead>
+            <tr>
+              <th>Index</th>
+              <th>Site Name</th>
+              <th>Visit</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody id="bookmark-list"></tbody>
+        </table>
+      </section>
+
+   
+    </main>
+
+    <!-- Link to external JavaScript file for functionality -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
